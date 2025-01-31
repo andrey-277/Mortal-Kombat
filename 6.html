@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7 задание</title>
+	<style>
+		.box1 {
+			background-image: url(31.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 100px;
+			left: 600px;
+			transition: 1s;
+		}
+		.box2 {
+			background-image: url(32.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 100px;
+			left: 900px;
+			transition: 1s;
+		}
+		.box3 {
+			background-image: url(12.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 100px;
+			left: 1200px;
+			transition: 1s;
+		}
+		.box4 {
+			background-image: url(29.webp);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 400px;
+			left: 600px;
+			transition: 1s;
+		}
+		.box5 {
+			background-image: url(83.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 400px;
+			left: 900px;
+			transition: 1s;
+		}
+		.box6 {
+			background-image: url(22.jpg);
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 400px;
+			left: 1200px;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body style="background-image: url(41.jpg); background-size: cover; ">
+	<!-- див с красным фоном -->
+	<h1>Найдите китану</h1>
+	<h3>Осталось попыток: <span class="text">3</span></h3>
+	<button class="btn">Перемешать</button>
+	<div class="main" style="color: white;">
+		<div class="box1" >
+			Скорпион
+		</div>
+		<div class="box2">
+			Сабзиро
+		</div>
+		<div class="box3" >
+			Китана
+		</div>
+		<div class="box4" >
+			Джейд
+		</div>
+		<div class="box5">
+			Ди'Вора
+		</div>
+		<div class="box6" >
+			Скарлет
+		</div>
+	</div>
+	<div style="text-align: center;">
+			<img src="1.jpg" style="display: none;" class="img">
+		</div>
+		<div style="text-align: center;">
+			<img src="0.jpg" style="display: none;" class="img1">
+		</div>
+
+	<script type="text/javascript">
+		// Создай переменную для попыток attempts, которая содержит значение 2. Выведи ее значение во внутрь тега span. 
+		// Сделай нажатие на кнопку 
+		// Когда нажимаешь на кнопку элементы меняются местами, див перекрасить в черный
+		// Когда нажимаешь на див на спанч боба выводится сообщение молодец 
+		// Когда нажимаешь на див на сквидворда попытки -1, если попытки равны нулю то ты проиграл
+		// При победе или при проигрыши все дивы скрываются
+		let attempts = 3;
+			document.querySelector(".text").innerHTML = attempts;
+			document.querySelector(".btn").onclick = function () {
+				document.querySelector(".box1").style.left = "1200px"
+				document.querySelector(".box1").style.top = "400px"
+				document.querySelector(".box1").style.background = "black"
+				document.querySelector(".box2").style.left = "600px"
+				document.querySelector(".box2").style.top = "400px"
+				document.querySelector(".box2").style.background = "black"
+				document.querySelector(".box3").style.left = "900px"
+				document.querySelector(".box3").style.top = "400px"
+				document.querySelector(".box3").style.background = "black"
+				document.querySelector(".box4").style.left = "900px"
+				document.querySelector(".box4").style.top = "100px"
+				document.querySelector(".box4").style.background = "black"
+				document.querySelector(".box5").style.left = "1200px"
+				document.querySelector(".box5").style.top = "100px"
+				document.querySelector(".box5").style.background = "black"
+				document.querySelector(".box6").style.left = "600px"
+				document.querySelector(".box6").style.top = "100px"
+				document.querySelector(".box6").style.background = "black"
+				document.querySelector(".main").style.color = "black"
+			}
+			document.querySelector(".box1").onclick = function () {
+				document.querySelector(".box1").style.backgroundImage = "url(31.jpg)"
+				document.querySelector(".box1").style.backgroundSize = "100% 100%"
+				alert("You lose")
+				attempts = attempts - 1;
+				document.querySelector(".text").innerHTML = attempts;
+				if (attempts == 0) {
+					document.querySelector(".main").style.display = "none"
+					document.querySelector(".img1").style.display = "block"
+				    document.querySelector(".img1").style.marginLeft = "300px"
+				}	
+			}
+			document.querySelector(".box2").onclick = function () {
+				document.querySelector(".box2").style.backgroundImage = "url(32.jpg)"
+				document.querySelector(".box2").style.backgroundSize = "100% 100%"
+				alert("You lose")
+				attempts = attempts - 1;
+				document.querySelector(".text").innerHTML = attempts;
+				if (attempts == 0) {
+					document.querySelector(".main").style.display = "none"
+					document.querySelector(".img1").style.display = "block"
+				    document.querySelector(".img1").style.marginLeft = "300px"
+				}
+			}
+			document.querySelector(".box3").onclick = function () {
+				alert("You win")
+				document.querySelector(".box3").style.backgroundImage = "url(12.jpg)"
+				document.querySelector(".box3").style.backgroundSize = "100% 100%"
+				document.querySelector(".main").style.display = "none"
+				document.querySelector(".img").style.display = "block"
+				document.querySelector(".img").style.marginLeft = "550px"
+
+			}
+			document.querySelector(".box4").onclick = function () {
+				document.querySelector(".box4").style.backgroundImage = "url(29.webp)"
+				document.querySelector(".box4").style.backgroundSize = "100% 100%"
+				alert("You lose")
+				attempts = attempts - 1;
+				document.querySelector(".text").innerHTML = attempts;
+				if (attempts == 0) {
+					document.querySelector(".main").style.display = "none";
+					document.querySelector(".img1").style.display = "block"
+				    document.querySelector(".img1").style.marginLeft = "300px"
+				}	
+			}
+			document.querySelector(".box5").onclick = function () {
+				document.querySelector(".box5").style.backgroundImage = "url(83.jpg)"
+				document.querySelector(".box5").style.backgroundSize = "100% 100%"
+				alert("You lose")
+				attempts = attempts - 1;
+				document.querySelector(".text").innerHTML = attempts;
+				if (attempts == 0) {
+					document.querySelector(".main").style.display = "none";
+					document.querySelector(".img1").style.display = "block"
+				    document.querySelector(".img1").style.marginLeft = "300px"
+				}	
+			}
+			document.querySelector(".box6").onclick = function () {
+				document.querySelector(".box6").style.backgroundImage = "url(22.jpg)"
+				document.querySelector(".box6").style.backgroundSize = "100% 100%"
+				alert("You lose")
+				attempts = attempts - 1;
+				document.querySelector(".text").innerHTML = attempts;
+				if (attempts == 0) {
+					document.querySelector(".main").style.display = "none";
+					document.querySelector(".img1").style.display = "block"
+				    document.querySelector(".img1").style.marginLeft = "300px"
+				}	
+			}
+	</script>
+</body>
+</html>
